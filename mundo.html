@@ -8,6 +8,8 @@
 	<link rel="stylesheet/less" type="text/css" href="css/estilos-mundo.less"/>
 	<script src="js/less.js-master/dist/less.js" type="text/javascript"></script>
 	<script src='js/script-mundo.js' type="module"></script>
+	<script src="js/libs/masonry.pkgd.min.js" type="text/javascript"></script>
+	<script src="js/libs/jquery-3.3.1.min.js" type="text/javascript"></script>
 </head>
 <body>
 	<header>
@@ -29,7 +31,7 @@
 						<li class="nav-item active">
 					</li>
 					<li>
-							<button class="btn"><img class="icone" src="/img/icones/adicionar.svg" alt="Adicionar widget"></button>
+							<button class="btn" data-toggle="modal" data-target="#modal-add-widget"><img class="icone" src="/img/icones/adicionar.svg" alt="Adicionar widget"></button>
 					</li>
 				</ul>
 
@@ -41,17 +43,41 @@
 		</nav>
 	</header>
   <main>
-		<div id="widgets">
-			<div class="card border-dark mb-3" style="max-width: 18rem;">
-			  <div class="card-header">Colocar botão de editar visivel no modo edição</div>
-			  <div class="card-body text-dark">
-			    <h5 class="card-title">Modelo de card</h5>
-			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			  </div>
+		<div id="widgets" class="grid">
+			<div class="widget grid-item">
+				<div class="card border-dark mb-3" style="max-width: 18rem;">
+					<div class="card-body text-dark">
+						<h5 class="card-title">Modelo de card</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="card-link">Abrir</a>
+						<a href="#" class="card-link editavel invisivel">Editar</a>
+						<a href="#" class="card-link editavel invisivel">Fechar</a>
+					</div>
+				</div>
 			</div>
 		</div>
   </main>
 	<img id="personagem" src="/img/carlton.gif" alt="Animação do Carlton dançando It's not unusal (música de Tom Jones)">
 	<span id="chao"></span>
+	<div class="modal" tabindex="-1" role="dialog" id="modal-add-widget">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Adicionar widget</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+					<label class="form-control" for="tipo-widget">Selecione o tipo do widget</label>
+	        <select class="form-control" name="tipo-widget"></select>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+	        <button type="button" class="btn btn-primary id="btn-add-widget"">Criar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </body>
 </html>
