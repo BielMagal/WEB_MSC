@@ -7,7 +7,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-	<link rel="shortcut icon" href="img/favico.svg" type="image/x-icon">
+	<link rel="shortcut icon" type="image/x-icon" href="favico.png">
 	<link rel="stylesheet/less" type="text/css" href="css/estilos-mundo.less"/>
 	<script src="js/less.js-master/dist/less.js" type="text/javascript"></script>
 	<script src='js/script-mundo.js' type="module"></script>
@@ -23,17 +23,17 @@
 			<div class="collapse navbar-collapse" id="navbarToggler">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-center" id="controle-visualizacao">
 					<li class="nav-item active">
-						<button class="btn btn-controle" id="btn-edicao"><img class="icone icone-texto" src="/img/icones/editar.svg" alt="Adicionar widget">Modo edição</button>
+						<button class="btn btn-controle" id="btn-edicao"><img class="icone icone-texto" src="img/icones/editar.svg" alt="Adicionar widget">Modo edição</button>
 						<li class="nav-item active">
 					</li>
 				</ul>
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-center invisivel" id="controle-edicao">
 					<li class="nav-item active">
-            <button class="btn btn-controle" id="btn-visualizacao"><img class="icone icone-texto" src="/img/icones/visualizar.svg" alt="Adicionar widget">Modo visualização</button>
+            <button class="btn btn-controle" id="btn-visualizacao"><img class="icone icone-texto" src="img/icones/visualizar.svg" alt="Adicionar widget">Modo visualização</button>
 						<li class="nav-item active">
 					</li>
 					<li>
-							<button class="btn" data-toggle="modal" data-target="#modal-add-widget"><img class="icone" src="/img/icones/adicionar.svg" alt="Adicionar widget"></button>
+							<button class="btn" data-toggle="modal" data-target="#modal-add-widget"><img class="icone" src="img/icones/adicionar.svg" alt="Adicionar widget"></button>
 					</li>
 				</ul>
 
@@ -70,7 +70,14 @@
 					</div>
 					<div class="modal-body">
 						<label for="tipo-widget">Selecione o tipo do widget</label>
-						<select class="form-control" name="tipo-widget"></select>
+						<select class="form-control" name="tipo-widget">
+							<option value="widget-galeria">Galeria</option>
+							<option value="widget-texto">Texto</option>
+							<option value="widget-audio">Áudio</option>
+							<option value="widget-video">Vídeo</option>
+							<option value="widget-plaquina">Plaquinha</option>
+							<option value="widget-contador">Contador de visitas</option>
+						</select>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -80,7 +87,7 @@
 			</div>
 		</div>
   </main>
-	<img id="personagem" src="/img/carlton.gif" alt="Animação do Carlton dançando It's not unusal (música de Tom Jones)">
+	<img id="personagem" src="img/carlton.gif" alt="Animação do Carlton dançando It's not unusal (música de Tom Jones)">
 	<span id="chao"></span>
 </body>
 </html>
