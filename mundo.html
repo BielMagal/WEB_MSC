@@ -17,14 +17,22 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarToggler">
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-center" id="controle-visualizacao">
 					<li class="nav-item active">
-            <a class="nav-link" href="#">Modo visualização/edição</a>
-					</li>
-					<li class="nav-item active">
-            <a class="nav-link" href="#">Adicionar widget</a>
+						<button class="btn btn-controle" id="btn-edicao"><img class="icone icone-texto" src="/img/icones/editar.svg" alt="Adicionar widget">Modo edição</button>
+						<li class="nav-item active">
 					</li>
 				</ul>
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-center invisivel" id="controle-edicao">
+					<li class="nav-item active">
+            <button class="btn btn-controle" id="btn-visualizacao"><img class="icone icone-texto" src="/img/icones/visualizar.svg" alt="Adicionar widget">Modo visualização</button>
+						<li class="nav-item active">
+					</li>
+					<li>
+							<button class="btn"><img class="icone" src="/img/icones/adicionar.svg" alt="Adicionar widget"></button>
+					</li>
+				</ul>
+
 				<div class="form-inline my-2 my-lg-0">
 					<ul class="navbar-nav">
 					</ul>
@@ -33,7 +41,7 @@
 		</nav>
 	</header>
   <main>
-		<div class="widgets">
+		<div id="widgets">
 			<div class="card border-dark mb-3" style="max-width: 18rem;">
 			  <div class="card-header">Colocar botão de editar visivel no modo edição</div>
 			  <div class="card-body text-dark">

@@ -1,5 +1,7 @@
 @import "estilos-geral";
 
+@cor-btn-verde: #53a535;
+
 html, body {
   height: 100%;
 }
@@ -26,4 +28,27 @@ body {
   height: 20%;
   width: auto;
   left: 0%;
+}
+
+.icone {
+  height: 20px;
+  width: auto;
+}
+
+.icone-texto {
+  padding-right: 5px;
+}
+
+#controle-edicao, #controle-visualizacao {
+  button {
+    text-align: center;
+    margin-right: 10px;
+  }
+  button:hover {
+    background: @cor-btn-verde;
+  }
+}
+
+#widgets {
+  margin: 1%;
 }
