@@ -33,7 +33,7 @@
 						<li class="nav-item active">
 					</li>
 					<li>
-							<button class="btn" data-toggle="modal" data-target="#modal-add-widget"><img class="icone" src="img/icones/adicionar.svg" alt="Adicionar widget"></button>
+							<button class="btn" id="btn-add-widget" type="button" data-toggle="modal" data-target="#modal-add-widget"><img class="icone" src="img/icones/adicionar.svg" alt="Adicionar widget"></button>
 					</li>
 				</ul>
 
@@ -46,7 +46,51 @@
 	</header>
   <main>
 		<div id="widgets" class="grid">
-			<div class="widget grid-item">
+			<div class="widget grid-item" id="widget-galeria">
+				<div class="card border-dark mb-3" style="max-width: 18rem;">
+					<div class="card-body text-dark">
+						<h5 class="card-title">Modelo de card</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="card-link">Abrir</a>
+						<a href="#" class="card-link editavel invisivel">Editar</a>
+						<a href="#" class="card-link editavel invisivel">Fechar</a>
+					</div>
+				</div>
+			</div>
+			<div class="widget grid-item" id="widget-texto">
+				<div class="card border-dark mb-3" style="max-width: 18rem;">
+					<div class="card-body text-dark">
+						<h5 class="card-title">Modelo de card</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="card-link">Abrir</a>
+						<a href="#" class="card-link editavel invisivel">Editar</a>
+						<a href="#" class="card-link editavel invisivel">Fechar</a>
+					</div>
+				</div>
+			</div>
+			<div class="widget grid-item" id="widget-video">
+				<div class="card border-dark mb-3" style="max-width: 18rem;">
+					<div class="card-body text-dark">
+						<h5 class="card-title">Modelo de card</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="card-link">Abrir</a>
+						<a href="#" class="card-link editavel invisivel">Editar</a>
+						<a href="#" class="card-link editavel invisivel">Fechar</a>
+					</div>
+				</div>
+			</div>
+			<div class="widget grid-item" id="widget-audio">
+				<div class="card border-dark mb-3" style="max-width: 18rem;">
+					<div class="card-body text-dark">
+						<h5 class="card-title">Modelo de card</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="card-link">Abrir</a>
+						<a href="#" class="card-link editavel invisivel">Editar</a>
+						<a href="#" class="card-link editavel invisivel">Fechar</a>
+					</div>
+				</div>
+			</div>
+			<div class="widget grid-item" id="widget-contador">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Modelo de card</h5>
@@ -59,6 +103,7 @@
 			</div>
 		</div>
 
+
 		<div class="modal" tabindex="-1" role="dialog" id="modal-add-widget">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -70,13 +115,7 @@
 					</div>
 					<div class="modal-body">
 						<label for="tipo-widget">Selecione o tipo do widget</label>
-						<select class="form-control" name="tipo-widget">
-							<option value="widget-galeria">Galeria</option>
-							<option value="widget-texto">Texto</option>
-							<option value="widget-audio">Áudio</option>
-							<option value="widget-video">Vídeo</option>
-							<option value="widget-plaquina">Plaquinha</option>
-							<option value="widget-contador">Contador de visitas</option>
+						<select class="form-control" name="tipo-widget" id="sel-tipo-widget">
 						</select>
 					</div>
 					<div class="modal-footer">
