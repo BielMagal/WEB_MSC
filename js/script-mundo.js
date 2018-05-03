@@ -1,6 +1,7 @@
 import {keyEvent} from './controle-personagem.js';
 import {alteraVisualizacao} from './controle-edicao.js';
 import {populaSelect} from './controle-widgets.js';
+import {changeVideo} from './video.js';
 
 // Adiciona listener para entrada do teclado
 let bodyEl = document.querySelector('body');
@@ -11,6 +12,7 @@ let botoesControle = document.querySelectorAll('.btn-controle');
 for (let botao of botoesControle) {
   botao.addEventListener('click', alteraVisualizacao);
 }
-
 let botaoAddWidget = document.querySelector('#btn-add-widget');
 botaoAddWidget.addEventListener('click', populaSelect);
+let clickChangeVideo = document.querySelector('#buttonVideo');
+bodyEl.addEventListener('click', changeVideo);
