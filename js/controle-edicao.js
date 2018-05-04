@@ -23,6 +23,7 @@ function habilitaCamposVisualizacao() {
     let ct = item.querySelector('.card-text');
     ct.classList.remove('invisivel');
     ct.innerHTML = ta.value;
+    window.localStorage.setItem(item.id + '-text', ta.value);
   }
 }
 

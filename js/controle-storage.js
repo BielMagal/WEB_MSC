@@ -4,9 +4,10 @@ const defaultImgs = {
   'src3':'https://www.meme4fun.com/images/c5b40a9d-d5d0-4dd3-946f-940c321ed016.png', 'alt3':"Terceira imagem"
 };
 const defaultVideo = "https://www.youtube.com/embed/kKSxlJPmz40";
-const defaultTextoGaleria = "Algumas imagens sobre \"It's not unusual\" e \"Um maluco no pedaço\".";
-const defaultTextoVideo = "Um video de Carlton dançando \"It's not unusual\"";
-
+const defaultText = {
+  'widget-galeria-text': "Algumas imagens sobre \"It's not unusual\" e \"Um maluco no pedaço\".",
+  'widget-video-text': "Um video de Carlton dançando \"It's not unusual\""
+};
 
 function mudarImg1() {
   let src1 = document.getElementById("linkImg1").value;
@@ -27,9 +28,6 @@ function mudarImg3() {
 }
 
 function carregaGaleria() {
-  console.log("entrou carregaGaleria")
-  // Galeria
-  let imgs = localStorage.getItem('imgs');
   for (let i of [1,2,3]) {
     let imgEl = document.querySelector('#img' + i);
     let src = localStorage.getItem('src' + i);
@@ -40,8 +38,20 @@ function carregaGaleria() {
   }
 }
 
+function carregaParagrafos() {
+  for (let item of document.querySelectorAll('.widget')){
+    let ct = item.querySelector('.card-text');
+    let text = window.localStorage.getItem(item.id + '-text');
+    if (text == null) {
+      text = defaultText[item.id + '-text'];
+    }
+    ct.innerHTML = text;
+  }
+}
+
 function carregaConteudo() {
   carregaGaleria();
+  carregaParagrafos();
 }
 
 export {carregaConteudo, mudarImg1, mudarImg2, mudarImg3};
