@@ -7,5 +7,7 @@ function changeVideo() {
       link = "https://www.youtube.com/embed/" + link;
       document.getElementById("frameVideo").src = link;
     }
+  }
 }
+
 export {changeVideo};

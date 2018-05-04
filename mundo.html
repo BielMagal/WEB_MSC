@@ -23,13 +23,13 @@
 			<div class="collapse navbar-collapse" id="navbarToggler">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-center" id="controle-visualizacao">
 					<li class="nav-item active">
-						<button class="btn btn-controle" id="btn-edicao"><img class="icone icone-texto" src="img/icones/editar.svg" alt="Adicionar widget">Modo edição</button>
+						<button class="btn btn-controle" id="btn-edicao" type="button"><img class="icone icone-texto" src="img/icones/editar.svg" alt="Adicionar widget">Modo edição</button>
 						<li class="nav-item active">
 					</li>
 				</ul>
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-center invisivel" id="controle-edicao">
 					<li class="nav-item active">
-            <button class="btn btn-controle" id="btn-visualizacao"><img class="icone icone-texto" src="img/icones/visualizar.svg" alt="Adicionar widget">Modo visualização</button>
+            <button class="btn btn-controle" id="btn-visualizacao" type="button"><img class="icone icone-texto" src="img/icones/visualizar.svg" alt="Adicionar widget">Modo visualização</button>
 						<li class="nav-item active">
 					</li>
 					<li>
@@ -52,45 +52,41 @@
 						<h5 class="card-title">Modelo de card</h5>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 						<a href="#" class="card-link">Abrir</a>
-						<a href="#" class="card-link editavel invisivel">Editar</a>
-						<a href="#" class="card-link editavel invisivel">Fechar</a>
+						<a href="#" class="card-link invisivel">Fechar</a>
 					</div>
 				</div>
 			</div>
 			<div class="widget grid-item" id="widget-texto">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
-						<h5 class="card-title">Modelo de card</h5>
+						<h5 class="card-title">Texto</h5>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 						<a href="#" class="card-link">Abrir</a>
-						<a href="#" class="card-link editavel invisivel">Editar</a>
-						<a href="#" class="card-link editavel invisivel">Fechar</a>
+						<a href="#" class="card-link invisivel">Fechar</a>
 					</div>
 				</div>
 			</div>
-			<div class="widget grid-item" id="widget-audio">
+			<div class="widget grid-item invisivel" id="widget-audio">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
-						<h5 class="card-title">Modelo de card</h5>
+						<h5 class="card-title">Áudio</h5>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 						<a href="#" class="card-link">Abrir</a>
-						<a href="#" class="card-link editavel invisivel">Editar</a>
-						<a href="#" class="card-link editavel invisivel">Fechar</a>
+						<a href="#" class="card-link invisivel">Fechar</a>
 					</div>
 				</div>
 			</div>
 			<div class="widget grid-item" id="widget-contador">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
-						<h5 class="card-title">Modelo de card</h5>
+						<h5 class="card-title">Contador</h5>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 						<a href="#" class="card-link">Abrir</a>
-						<a href="#" class="card-link editavel invisivel">Editar</a>
-						<a href="#" class="card-link editavel invisivel">Fechar</a>
+						<a href="#" class="card-link invisivel">Fechar</a>
 					</div>
 				</div>
 			</div>
-			<div class="widget grid-item">
+			<div class="widget grid-item" id="widget-video">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Vídeo</h5>
@@ -98,8 +94,8 @@
 						<iframe id="frameVideo" src="https://www.youtube.com/embed/kKSxlJPmz40" frameborder="0" allowfullscreen></iframe>
 						<input id="linkVideo" type="text" placeholder="Youtube video link..." value="" maxlength="240">
 						<button id="buttonVideo" class="btn btn-block" type="button">Carregar Vídeo</button>
-						<a href="#" class="card-link editavel invisivel">Editar</a>
-						<a href="#" class="card-link editavel invisivel">Fechar</a>
+						<a href="#" class="card-link invisivel">Editar</a>
+						<a href="#" class="card-link invisivel">Fechar</a>
 					</div>
 				</div>
 			</div>
@@ -126,6 +122,9 @@
 			</div>
 		</div>
   </main>
+	<div class="invisivel" id="widget-plaquinha">
+
+	</div>
 	<img id="personagem" src="img/carlton.gif" alt="Animação do Carlton dançando It's not unusal (música de Tom Jones)">
 	<span id="chao"></span>
 </body>
