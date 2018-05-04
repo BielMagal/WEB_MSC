@@ -6,7 +6,8 @@ const defaultImgs = {
 const defaultVideo = "https://www.youtube.com/embed/kKSxlJPmz40";
 const defaultText = {
   'widget-galeria-text': "Algumas imagens sobre \"It's not unusual\" e \"Um maluco no pedaço\".",
-  'widget-video-text': "Um video de Carlton dançando \"It's not unusual\""
+  'widget-video-text': "Um video de Carlton dançando \"It's not unusual\"",
+  'widget-contador-text': 0
 };
 
 function mudarImg1() {
@@ -49,8 +50,20 @@ function carregaParagrafos() {
   }
 }
 
+function carregaContador() {
+  let item = document.getElementById('contador-value');
+  let text = window.localStorage.getItem('widget-contador-text');
+  if (text == null) {
+    text = defaultText['widget-contador-text'];
+  }
+  text = parseInt(text) + 1;
+  window.localStorage.setItem('widget-contador-text', text);
+  item.innerHTML = text;
+}
+
 function carregaConteudo() {
   carregaGaleria();
+  carregaContador();
   carregaParagrafos();
 }
 

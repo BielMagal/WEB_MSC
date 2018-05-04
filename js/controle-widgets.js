@@ -29,10 +29,8 @@ function populaSelect() {
 
 // Habilita os widgets da tela selecionados
 function habilitaWidgets() {
-  console.log("Entrei");
   let selected = document.getElementById('sel-tipo-widget');
   selected = selected.options[selected.selectedIndex].value;
-  console.log(selected);
   document.getElementById(selected).classList.remove('invisivel');
   populaSelect();
 }
