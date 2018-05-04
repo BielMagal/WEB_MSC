@@ -4,11 +4,25 @@ function habilitaCamposEdicao() {
   for (let item of document.querySelectorAll('.editavel')){
     item.classList.remove('invisivel');
   }
+  for (let item of document.querySelectorAll('.widget')){
+    let ta = item.querySelector('textarea');
+    ta.classList.remove('invisivel');
+    let ct = item.querySelector('.card-text');
+    ct.classList.add('invisivel');
+    ta.value = ct.innerHTML;
+  }
 }
 
 function habilitaCamposVisualizacao() {
   for (let item of document.querySelectorAll('.editavel')){
     item.classList.add('invisivel');
+  }
+  for (let item of document.querySelectorAll('.widget')){
+    let ta = item.querySelector('textarea');
+    ta.classList.add('invisivel');
+    let ct = item.querySelector('.card-text');
+    ct.classList.remove('invisivel');
+    ct.innerHTML = ta.value;
   }
 }
 
