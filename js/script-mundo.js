@@ -2,9 +2,7 @@ import {keyEvent} from './controle-personagem.js';
 import {alteraVisualizacao} from './controle-edicao.js';
 import {populaSelect} from './controle-widgets.js';
 import {changeVideo} from './video.js';
-import {mudarImg1} from './galeria.js';
-import {mudarImg2} from './galeria.js';
-import {mudarImg3} from './galeria.js';
+import {carregaConteudo, mudarImg1, mudarImg2, mudarImg3} from './controle-storage.js'
 
 // Adiciona listener para entrada do teclado
 let bodyEl = document.querySelector('body');
@@ -27,3 +25,5 @@ changeImg2.addEventListener('click', mudarImg2);
 
 let changeImg3 = document.querySelector('#buttonImg3');
 changeImg3.addEventListener('click', mudarImg3);
+
+document.addEventListener("DOMContentLoaded", carregaConteudo);
