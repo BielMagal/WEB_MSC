@@ -5,6 +5,8 @@ function habilitaCamposEdicao() {
     item.classList.remove('invisivel');
   }
   for (let item of document.querySelectorAll('.widget')){
+    if(item.id == 'widget-contador')
+      continue;
     let ta = item.querySelector('textarea');
     ta.classList.remove('invisivel');
     let ct = item.querySelector('.card-text');
@@ -18,11 +20,14 @@ function habilitaCamposVisualizacao() {
     item.classList.add('invisivel');
   }
   for (let item of document.querySelectorAll('.widget')){
+    if(item.id == 'widget-contador')
+      continue;
     let ta = item.querySelector('textarea');
     ta.classList.add('invisivel');
     let ct = item.querySelector('.card-text');
     ct.classList.remove('invisivel');
     ct.innerHTML = ta.value;
+    window.localStorage.setItem(item.id + '-text', ta.value);
   }
 }
 

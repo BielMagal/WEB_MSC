@@ -8,9 +8,7 @@ import {desabilitaContador} from './controle-widgets.js';
 import {desabilitaVideo} from './controle-widgets.js';
 import {habilitaWidgets} from './controle-widgets.js';
 import {changeVideo} from './video.js';
-import {mudarImg1} from './galeria.js';
-import {mudarImg2} from './galeria.js';
-import {mudarImg3} from './galeria.js';
+import {carregaConteudo, mudarImg1, mudarImg2, mudarImg3} from './controle-storage.js'
 
 // Adiciona listener para entrada do teclado
 let bodyEl = document.querySelector('body');
@@ -51,3 +49,5 @@ desContador.addEventListener('click', desabilitaContador);
 
 let desVideo = document.querySelector('#desabilitaVideo');
 desVideo.addEventListener('click', desabilitaVideo);
+
+document.addEventListener("DOMContentLoaded", carregaConteudo);
