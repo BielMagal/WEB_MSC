@@ -46,7 +46,7 @@
 	</header>
   <main>
 		<div id="widgets" class="grid">
-			<div class="widget grid-item" id="widget-galeria">
+			<div class="widget grid-item invisivel" id="widget-galeria">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Galeria de imagem</h5>
@@ -79,41 +79,41 @@
 						    <span class="sr-only">Next</span>
 						  </a>
 						</div>
-						<a href="#" class="card-link editavel invisivel">Fechar</a>
+						<button id="desabilitaGaleria" class="desabilitar btn-danger btn btn-block editavel invisivel" type="button">Desabilitar</button>
 					</div>
 				</div>
 			</div>
-			<div class="widget grid-item" id="widget-texto">
+			<div class="widget grid-item invisivel" id="widget-texto">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Texto</h5>
 						<textarea class="form-control invisivel" rows="3"></textarea>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="card-link invisivel">Fechar</a>
+						<button id="desabilitaTexto" class="desabilitar btn-danger btn btn-block editavel invisivel" type="button">Desabilitar</button>
 					</div>
 				</div>
 			</div>
-			<div class="widget grid-item" id="widget-audio">
+			<div class="widget grid-item invisivel" id="widget-audio">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Áudio</h5>
 						<textarea class="form-control invisivel" rows="3"></textarea>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="card-link invisivel">Fechar</a>
+						<button id="desabilitaAudio" class="desabilitar btn-danger btn btn-block editavel invisivel" type="button">Desabilitar</button>
 					</div>
 				</div>
 			</div>
-			<div class="widget grid-item" id="widget-contador">
+			<div class="widget grid-item invisivel" id="widget-contador">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Contador</h5>
 						<textarea class="form-control invisivel" rows="3"></textarea>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="card-link invisivel">Fechar</a>
+						<button id="desabilitaContador" class="desabilitar btn-danger btn btn-block editavel invisivel" type="button">Desabilitar</button>
 					</div>
 				</div>
 			</div>
-			<div class="widget grid-item" id="widget-video">
+			<div class="widget grid-item invisivel" id="widget-video">
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Vídeo</h5>
@@ -122,7 +122,7 @@
 						<iframe id="frameVideo" src="https://www.youtube.com/embed/kKSxlJPmz40" frameborder="0" allowfullscreen></iframe>
 						<input id="linkVideo" class="editavel invisivel" type="text" placeholder="Youtube video link..." value="" maxlength="240">
 						<button id="buttonVideo" class="btn btn-block editavel invisivel" type="button">Carregar Vídeo</button>
-						<a href="#" class="card-link invisivel">Fechar</a>
+						<button id="desabilitaVideo" class="desabilitar btn-danger btn btn-block editavel invisivel" type="button">Desabilitar</button>
 					</div>
 				</div>
 			</div>
@@ -143,7 +143,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-						<button type="button" class="btn btn-primary id="btn-add-widget"">Criar</button>
+						<button type="button" class="btn btn-primary" id="btn-criar-widget">Criar</button>
 					</div>
 				</div>
 			</div>

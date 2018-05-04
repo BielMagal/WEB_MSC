@@ -16,16 +16,12 @@ function populaSelect() {
     opt.remove();
   }
   for (let widget of widgets) {
-    console.log('chave: ' + widget.chave);
-    console.log('valor: ' + widget.valor);
     let widgetEl = document.querySelector('#' + widget.chave);
     if (widgetEl == null || widgetEl.classList.contains('invisivel')) {
-      console.log('entrou if');
       let opt = document.createElement('option');
       opt.id = 'opt-' + widget.chave;
       opt.value = widget.chave;
       opt.text = widget.valor;
-      console.log(opt);
       selectEl.appendChild(opt);
     }
   }
@@ -33,6 +29,32 @@ function populaSelect() {
 
 // Habilita os widgets da tela selecionados
 function habilitaWidgets() {
+  console.log("Entrei");
+  let selected = document.getElementById('sel-tipo-widget');
+  selected = selected.options[selected.selectedIndex].value;
+  console.log(selected);
+  document.getElementById(selected).classList.remove('invisivel');
+  populaSelect();
 }
 
-export {populaSelect};
+function desabilitaGaleria() {
+  document.getElementById('widget-galeria').classList.add('invisivel');
+}
+
+function desabilitaTexto() {
+  document.getElementById('widget-texto').classList.add('invisivel');
+}
+
+function desabilitaAudio() {
+  document.getElementById('widget-audio').classList.add('invisivel');
+}
+
+function desabilitaContador() {
+  document.getElementById('widget-contador').classList.add('invisivel');
+}
+
+function desabilitaVideo() {
+  document.getElementById('widget-video').classList.add('invisivel');
+}
+
+export {populaSelect, habilitaWidgets, desabilitaGaleria, desabilitaTexto, desabilitaAudio, desabilitaContador, desabilitaVideo};
