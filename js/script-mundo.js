@@ -15,4 +15,4 @@ for (let botao of botoesControle) {
 let botaoAddWidget = document.querySelector('#btn-add-widget');
 botaoAddWidget.addEventListener('click', populaSelect);
 let clickChangeVideo = document.querySelector('#buttonVideo');
-bodyEl.addEventListener('click', changeVideo);
+clickChangeVideo.addEventListener('click', changeVideo);
