@@ -1,6 +1,6 @@
 /*
-  GET /
+  GET /login
 */
 exports.getLogin =  function (req, res) {
-  res.send('Login!!!');
+  res.render('login');
 }
