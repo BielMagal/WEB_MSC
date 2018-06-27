@@ -1,9 +1,10 @@
 // Packages
-const express     = require('express'); // servidor
-const exp_hbs     = require('express-handlebars');  // gerador de html
-const mongoose    = require('mongoose');  // mapeia bd
-const body_parser = require('body-parser'); // adiciona as requisicoes em req.body
-// const flash       = require('req-flash'); // gera mensagens html (alerta, sucesso, ...)
+const express       = require('express'); // servidor
+const exp_hbs       = require('express-handlebars');  // gerador de html
+const body_parser   = require('body-parser'); // adiciona as requisicoes em req.body
+const session       = require('express-session');
+const mongoose      = require('mongoose');  // mapeia bd
+const MongoStore    = require('connect-mongo')(session);
 // Controllers
 const login_controller      = require('./controllers/login');
 const cadastro_controller   = require('./controllers/cadastro');
@@ -14,10 +15,10 @@ const bd_config = require('./config/banco');
 
 
 // Conecta ao banco
-console.log(bd_config.bd);
-mongoose.connect(bd_config.bd);
+// console.log(bd_config.bd);
+mongoose.connect(bd_config.url);
 mongoose.connection.on('error', () => {
-console.error('Erro ao conectar-se ao MongoDB.');
+  console.error('Erro ao conectar-se ao MongoDB.');
 });
 
 const app = express();
@@ -27,7 +28,12 @@ app.use(express.static(`${__dirname}/public`));
 app.use(body_parser.urlencoded({
   extended: true
 }));
-// app.use(flash);
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: bd_config.session_secret,
+  store: new MongoStore({ url: bd_config.url, autoReconnect: true })
+}));
 
 // Define as views
 app.engine('.hbs', exp_hbs({extname: '.hbs'}));

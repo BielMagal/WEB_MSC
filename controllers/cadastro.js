@@ -17,12 +17,10 @@ exports.postCadastro = function(req, res, next) {
     senha: req.body.senha,
   });
 
-  usuario.save(function (err) {
+  usuario.save(function (err, usuario) {
     if (err) {
-      console.log('Erro ao salvar usuário.');
       next(err);
     }
   });
-  // req.flash('successMessage', 'Perfil salvo com sucesso');
   res.redirect('login');
 }

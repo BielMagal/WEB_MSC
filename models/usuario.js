@@ -18,17 +18,18 @@ usuario_schema.pre('save', function(next) {
   if (!this.isModified('senha')) {
     return next();
   }
-  let senha = this.senha;
+  let usuario = this;
   bcrypt.genSalt(qtd_saltos, (err, salto) => {
     if (err) {
       return next(err)
     };
-    bcrypt.hash(senha, salto, null, (err, hash) => {
+    bcrypt.hash(usuario.senha, salto, (err, hash) => {
       if (err) {
         return next(err)
       };
       // Armazena a senha criptografada
       usuario.senha = hash;
+      next();
     });
   });
 });
