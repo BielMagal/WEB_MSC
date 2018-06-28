@@ -20,6 +20,7 @@ function mudarImg1() {
     img3: '',
   }
 
+  console
   $.ajax({
     type: "POST",
     url: '/imagem',
