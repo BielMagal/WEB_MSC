@@ -18,17 +18,17 @@
 			<h2 class="form-group nome-site">CraftFolioGotchi</h2>
 			<p>Entre ou <a href="cadastro.html">cadastre-se</a></p>
 		</div>
-		<form>
+		<form action="/login" method="post">
 			<div class="form-group">
-				<input class="form-control" placeholder="Usuário" required autofocus type="email">
-				<input class="form-control" placeholder="Senha" required type="password">
+				<input name="email" class="form-control" placeholder="Usuário" required autofocus type="email">
+				<input name="senha" class="form-control" placeholder="Senha" required type="password">
 			</div>
 			<div class="form-group checkbox mb-3">
 				<label>
 					<input value="remember-me" type="checkbox"> Lembrar a senha
 				</label>
 			</div>
-			<a class="form-group btn btn-primary btn-block" href="mundo.html">Entrar</a>
+			<button type="submit" name="btn-entrar" class="form-group btn btn-primary btn-block">Entrar</button>
 		</form>
 	</main>
 	<footer id="copyright">
