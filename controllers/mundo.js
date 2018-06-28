@@ -53,6 +53,17 @@ exports.getMundo =  function (req, res) {
   } );
 }
 
-exports.postImagem = function(req, res, next) {
-  console.log(req.body.img1);
+exports.postImagem1 = function(req, res, next) {
+  console.log('post imagem1');
+  console.log(req.params.img);
+}
+
+exports.postImagem2 = function(req, res, next) {
+  console.log('post imagem2');
+  console.log(req.params.img);
+}
+
+exports.postImagem3 = function(req, res, next) {
+  console.log('post imagem3');
+  console.log(req.params.img);
 }

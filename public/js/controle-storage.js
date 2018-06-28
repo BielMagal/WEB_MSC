@@ -12,23 +12,18 @@ const defaultText = {
 
 function mudarImg1() {
   let src1 = document.getElementById("linkImg1").value;
-  document.getElementById("img1").src = src1;
-
   let data = {
     img1: src1,
     img2: '',
     img3: '',
   }
 
-  console
+  console.log('mudaimagem1');
   $.ajax({
     type: "POST",
-    url: '/imagem',
-    data: JSON.stringify(data),
-    contentType: 'application/json',
+    url: '/img1/' + src1,
     success: function(data) {
-        console.log('success');
-        console.log(JSON.stringify(data));
+      console.log('success');
     }
   });
   // localStorage.setItem('src1', src1);
@@ -36,14 +31,43 @@ function mudarImg1() {
 
 function mudarImg2() {
   let src2 = document.getElementById("linkImg2").value;
-  document.getElementById("img2").src = src2;
-  localStorage.setItem('src2', src2);
+
+  let data = {
+    img1: '',
+    img2: src2,
+    img3: '',
+  }
+
+  console.log('mudaimagem2');
+  $.ajax({
+    type: "POST",
+    url: '/img2/' + src2,
+    success: function(data) {
+      console.log('success');
+    }
+  });
+  // localStorage.setItem('src2', src2);
 }
 
 function mudarImg3() {
   let src3 = document.getElementById("linkImg3").value;
   document.getElementById("img3").src = src3;
-  localStorage.setItem('src3', src3);
+  let data = {
+    img1: '',
+    img2: '',
+    img3: src3,
+  }
+
+  console.log('mudaimagem3');
+  $.ajax({
+    type: "POST",
+    url: '/img3/' + src3,
+    success: function(data) {
+      console.log('success');
+    }
+  });
+
+  // localStorage.setItem('src3', src3);
 }
 
 function carregaGaleria() {

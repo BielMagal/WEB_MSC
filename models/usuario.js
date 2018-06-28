@@ -17,10 +17,10 @@ let usuario_schema = new mongoose.Schema({
   habilitadoImagens: {type: Boolean, default: false},
   habilitadoVideo: {type: Boolean, default: false},
   habilitadoAudio: {type: Boolean, default: true},
-  imagens: { type: String, default: [
+  imagens: { type: Array, default: [
     'https://images-na.ssl-images-amazon.com/images/I/512dtbDONBL._SY355_.jpg',
     'https://slm-assets2.secondlife.com/assets/12810720/view_large/not_unusual.jpg?1448051629',
-    'https://www.meme4fun.com/images/c5b40a9d-d5d0-4dd3-946f-940c321ed016.png'
+    'https://upload.wikimedia.org/wikipedia/commons/5/5b/Alfonsocropped.jpg'
   ] },
   video: { type: String, default: 'https://www.youtube.com/embed/kKSxlJPmz40' },
   audio: { type: String, default: '/audio/som.mp3' },

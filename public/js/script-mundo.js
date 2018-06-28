@@ -50,4 +50,4 @@ desContador.addEventListener('click', desabilitaContador);
 let desVideo = document.querySelector('#desabilitaVideo');
 desVideo.addEventListener('click', desabilitaVideo);
 
-document.addEventListener("DOMContentLoaded", carregaConteudo);
+// document.addEventListener("DOMContentLoaded", carregaConteudo);

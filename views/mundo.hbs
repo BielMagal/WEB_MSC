@@ -68,6 +68,8 @@
 					</div>
 				</div>
 			</div>
+
+
 			{{#if habilitadoImagens}}
 				<div class="widget grid-item" id="widget-galeria">
 			{{else}}
@@ -80,18 +82,18 @@
 						<p class="card-text">{{textoImagens}}</p>
 						<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 						  <div class="carousel-inner">
-						    <div class="carousel-item active">
-						      <img id="img1" class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/512dtbDONBL._SY355_.jpg" alt="Capa do disco It's not unusual de Tom Jones">
+								<div class="carousel-item active">
+						      <img id="img1" class="d-block w-100" src={{imagens.[0]}}>
 									<input id="linkImg1" class="imgsNum editavel invisivel" type="text" placeholder="Link da imagem..." value="">
 									<button id="buttonImg1" class="btn btn-block editavel invisivel" type="button">Mudar imagem</button>
 								</div>
 						    <div class="carousel-item">
-						      <img id="img2" class="d-block w-100" src="https://slm-assets2.secondlife.com/assets/12810720/view_large/not_unusual.jpg?1448051629" alt="Carlton dançando not unusual">
+						      <img id="img2" class="d-block w-100" src={{imagens.[1]}}>
 									<input id="linkImg2" class="imgsNum editavel invisivel" type="text" placeholder="Link da imagem..." value="">
 									<button id="buttonImg2" class="btn btn-block editavel invisivel" type="button">Mudar imagem</button>
 								</div>
 						    <div class="carousel-item">
-						      <img id="img3" class="d-block w-100" src="https://www.meme4fun.com/images/c5b40a9d-d5d0-4dd3-946f-940c321ed016.png" alt="Meme Will Smith de boca aberta">
+						      <img id="img3" class="d-block w-100" src={{imagens.[2]}}>
 									<input id="linkImg3" class="imgsNum editavel invisivel" type="text" placeholder="Link da imagem..." value="">
 									<button id="buttonImg3" class="btn btn-block editavel invisivel" type="button">Mudar imagem</button>
 								</div>
@@ -119,9 +121,9 @@
 						<h5 class="card-title">Áudio</h5>
 						<textarea class="form-control invisivel" rows="3"></textarea>
 						<p class="card-text">{{textoAudio}}</p>
-						<!-- <audio src="som.mp3" autoplay>
+						<audio src={{audio}} autoplay>
   						O seu navegador não suporta o elemento <code>audio</code>.
-						</audio> -->
+						</audio>
 						<button id="desabilitaAudio" class="desabilitar btn-danger btn btn-block editavel invisivel" type="button">Desabilitar</button>
 					</div>
 				</div>
