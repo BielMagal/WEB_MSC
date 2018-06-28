@@ -13,7 +13,24 @@ const defaultText = {
 function mudarImg1() {
   let src1 = document.getElementById("linkImg1").value;
   document.getElementById("img1").src = src1;
-  localStorage.setItem('src1', src1);
+
+  let data = {
+    img1: src1,
+    img2: '',
+    img3: '',
+  }
+
+  $.ajax({
+    type: "POST",
+    url: '/imagem',
+    data: JSON.stringify(data),
+    contentType: 'application/json',
+    success: function(data) {
+        console.log('success');
+        console.log(JSON.stringify(data));
+    }
+  });
+  // localStorage.setItem('src1', src1);
 }
 
 function mudarImg2() {
@@ -66,5 +83,13 @@ function carregaConteudo() {
   // carregaContador();
   // carregaParagrafos();
 }
+
+// $.ajax({
+//   url: '/habilita/3434',
+//   method: 'POST',      // opcional: 'GET' é o valor padrão
+//   success: function(resposta) {
+//     console.dir(resposta);  // veja a resposta no terminal
+//     alert('Post curtido!');
+// });
 
 export {carregaConteudo, mudarImg1, mudarImg2, mudarImg3};

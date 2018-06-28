@@ -10,7 +10,7 @@ const urlLocal = 'mongodb://' + bd_usuario + ':' + bd_senha + '@' + bd_host + ':
 const urlRemota = 'mongodb://admin:admin2018@ds221271.mlab.com:21271/msc';
 
 module.exports = {
-  url: urlRemota,
-  // url : urlLocal
+  // url: urlRemota,
+  url : urlLocal,
   session_secret: session_secret
 };

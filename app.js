@@ -71,6 +71,8 @@ app.post('/login', (req, res, next) => {
     });
   })(req, res, next);
 });
+app.post('/imagem', mundo_controller.postImagem);
+
 
 // Trata páginas não encontradas
 app.use(function(req, res, next){

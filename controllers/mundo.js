@@ -21,11 +21,10 @@ exports.getMundo =  function (req, res) {
   if (mundo != req.user.mundo) {
     isOwner = false;
   }
-  // Verifica se mundo existe
   contexto.isOwner = isOwner;
 
+  // Verifica se mundo existe
   Usuario.findOne({ mundo: mundo }, function(err, usuario) {
-    console.log('pesquisou');
     if (err) {
       throw err;
     }
@@ -34,7 +33,6 @@ exports.getMundo =  function (req, res) {
     }
     usuarioMundo = usuario;
   }).then(function() {
-    console.log('renderizou');
     contexto = {
       isOwner: isOwner,
       habilitadas: usuarioMundo.habilitadas,
@@ -51,7 +49,10 @@ exports.getMundo =  function (req, res) {
       habilitadoAudio: usuarioMundo.habilitadoAudio,
     };
     // Carrega os elementos da página ao contexto
-    console.log(contexto);
     res.render('mundo', contexto);
   } );
+}
+
+exports.postImagem = function(req, res, next) {
+  console.log(req.body.img1);
 }
