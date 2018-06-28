@@ -53,12 +53,30 @@
 	</header>
   <main>
 		<div id="widgets" class="grid">
-			<div class="widget grid-item invisivel" id="widget-galeria">
+			{{#if habilitadoTexto }}
+				<div class="widget grid-item" id="widget-texto">
+			{{else}}
+				<div class="widget grid-item invisivel" id="widget-texto">
+			{{/if}}
+				<div class="card border-dark mb-3" style="max-width: 18rem;">
+					<div class="card-body text-dark">
+						<h5 class="card-title">Texto</h5>
+						<textarea class="form-control invisivel" rows="3"></textarea>
+						<p class="card-text">{{texto}}</p>
+						<button id="desabilitaTexto" class="desabilitar btn-danger btn btn-block editavel invisivel" type="button">Desabilitar</button>
+					</div>
+				</div>
+			</div>
+			{{#if habilitadoImagens}}
+				<div class="widget grid-item" id="widget-galeria">
+			{{else}}
+				<div class="widget grid-item invisivel" id="widget-galeria">
+			{{/if}}
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Galeria de imagem</h5>
 						<textarea class="form-control invisivel" rows="3"></textarea>
-						<p class="card-text">Algumas imagens sobre "It's not unusual" e "Um maluco no pedaço".</p>
+						<p class="card-text">{{textoImagens}}</p>
 						<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 						  <div class="carousel-inner">
 						    <div class="carousel-item active">
@@ -90,22 +108,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="widget grid-item invisivel" id="widget-texto">
-				<div class="card border-dark mb-3" style="max-width: 18rem;">
-					<div class="card-body text-dark">
-						<h5 class="card-title">Texto</h5>
-						<textarea class="form-control invisivel" rows="3"></textarea>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<button id="desabilitaTexto" class="desabilitar btn-danger btn btn-block editavel invisivel" type="button">Desabilitar</button>
-					</div>
-				</div>
-			</div>
-			<div class="widget grid-item invisivel" id="widget-audio">
+			{{#if habilitadoAudio}}
+				<div class="widget grid-item" id="widget-audio">
+			{{else}}
+				<div class="widget grid-item invisivel" id="widget-audio">
+			{{/if}}
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Áudio</h5>
 						<textarea class="form-control invisivel" rows="3"></textarea>
-						<p class="card-text">It's not unusuaaaaal...</p>
+						<p class="card-text">{{textoAudio}}</p>
 						<!-- <audio src="som.mp3" autoplay>
   						O seu navegador não suporta o elemento <code>audio</code>.
 						</audio> -->
@@ -122,12 +134,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="widget grid-item invisivel" id="widget-video">
+			{{#if habilitadoVideo}}
+				<div class="widget grid-item" id="widget-video">
+			{{else}}
+				<div class="widget grid-item invisivel" id="widget-video">
+			{{/if}}
 				<div class="card border-dark mb-3" style="max-width: 18rem;">
 					<div class="card-body text-dark">
 						<h5 class="card-title">Vídeo</h5>
 						<textarea class="form-control invisivel" rows="3"></textarea>
-						<p class="card-text">Um video de Carlton dançando "It's not unusual"</p>
+						<p class="card-text">{{textoVideo}}</p>
 						<iframe id="frameVideo" src="https://www.youtube.com/embed/kKSxlJPmz40" frameborder="0" allowfullscreen></iframe>
 						<input id="linkVideo" class="editavel invisivel" type="text" placeholder="Youtube video link..." value="" maxlength="240">
 						<button id="buttonVideo" class="btn btn-block editavel invisivel" type="button">Carregar Vídeo</button>

@@ -11,9 +11,25 @@ let usuario_schema = new mongoose.Schema({
   email: { type: String, required: true, unique: true, lowercase: true },
   nome: { type: String, required: true },
   senha: { type: String, required: true },
-  mundo: { type: Number, default: 0 },
-  facebook: String,
-  google: String,
+  mundo: { type: Number, default: 0, unique: true },
+  avatar: { type: String, default: '/img/carlton.gif'},
+  habilitadoTexto: {type: Boolean, default: true},
+  habilitadoImagens: {type: Boolean, default: false},
+  habilitadoVideo: {type: Boolean, default: false},
+  habilitadoAudio: {type: Boolean, default: true},
+  imagens: { type: String, default: [
+    'https://images-na.ssl-images-amazon.com/images/I/512dtbDONBL._SY355_.jpg',
+    'https://slm-assets2.secondlife.com/assets/12810720/view_large/not_unusual.jpg?1448051629',
+    'https://www.meme4fun.com/images/c5b40a9d-d5d0-4dd3-946f-940c321ed016.png'
+  ] },
+  video: { type: String, default: 'https://www.youtube.com/embed/kKSxlJPmz40' },
+  audio: { type: String, default: '/audio/som.mp3' },
+  textos: { type: Array, default: [
+    'Coloque aqui um texto',
+    'Algumas imagens sobre \"It\'s not unusual\" e \"Um maluco no pedaço\"',
+    'Um video de Carlton dançando \"It\'s not unusual\"',
+    'Tantitararam Tantitararam, Tantitararam Tantitararam'
+  ] },
 });
 
 

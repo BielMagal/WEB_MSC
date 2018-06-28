@@ -62,9 +62,9 @@ function carregaContador() {
 }
 
 function carregaConteudo() {
-  carregaGaleria();
-  carregaContador();
-  carregaParagrafos();
+  // carregaGaleria();
+  // carregaContador();
+  // carregaParagrafos();
 }
 
 export {carregaConteudo, mudarImg1, mudarImg2, mudarImg3};
