@@ -83,7 +83,7 @@ app.use(function(req, res, next){
 });
 
 // Inicia servidor
-const server = app.listen(5000, () => {
+const server = app.listen(process.env.PORT || 5000, () => {
   let host = server.address().address;
   const port = server.address().port;
   if (host.length == 2) {
