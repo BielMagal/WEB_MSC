@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 // Colecoes
 const Contador = require('../models/contador');
 // Parâmetros
-const qtd_saltos = 7;
+const QTD_SALTOS = 7;
 
 
 let usuario_schema = new mongoose.Schema({
@@ -29,7 +29,7 @@ usuario_schema.pre('save', function(next) {
     usuario.mundo = cont.seq;
 
     // Criptografa a senha
-    bcrypt.genSalt(qtd_saltos, (err, salto) => {
+    bcrypt.genSalt(QTD_SALTOS, (err, salto) => {
       if (err) {
         return next(err)
       };

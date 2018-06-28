@@ -38,4 +38,14 @@ passport.use(new LocalStrategy({
   });
 }));
 
-module.exports = {passport : passport};
+const estaAutenticado = function (req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  };
+  return res.redirect('/');
+};
+
+module.exports = {
+  passport : passport,
+  estaAutenticado: estaAutenticado
+};

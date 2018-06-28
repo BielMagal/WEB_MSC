@@ -12,7 +12,9 @@ const mundo_controller  = require('./controllers/mundo');
 const inicio_controller = require('./controllers/inicio');
 // Configuracoes
 const bd_config = require('./config/banco');
-const passport  = require('./config/autenticacao').passport;
+const autenticacao_config  = require('./config/autenticacao');
+const passport = autenticacao_config.passport;
+const estaAutenticado = autenticacao_config.estaAutenticado;
 
 let app = express();
 
@@ -43,15 +45,42 @@ app.set('views', './views');
 // Rotas GET
 app.get('/', inicio_controller.getInicio);
 app.get('/login', conta_controller.getLogin);
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 app.get('/cadastro', conta_controller.getCadastro);
-// app.get('/mundo/:mundo', mundo_controller.getMundo(req, res, mundo));
-app.get('/mundo', mundo_controller.getMundo);
+app.get('/mundo/:mundo', estaAutenticado, mundo_controller.getMundo);
+app.get('/naoachou', conta_controller.getNaoAchou);
 
 // Rotas POST
-app.post('/login', (req, res) => passport.authenticate('local',
-{ successRedirect: '/mundo/' + req.user.mundo, failureRedirect: '/login', })(req, res));
-
 app.post('/cadastro', conta_controller.postCadastro);
+app.post('/login', (req, res, next) => {
+  passport.authenticate('local', (err, usuario, info) => {
+    if (err) {
+      return next(err);
+    }
+    if (!usuario) {
+      return res.redirect('/login');
+    }
+    req.logIn(usuario, function(err) {
+      if (err) {
+        return next(err);
+      }
+      return res.redirect('/mundo/' + usuario.mundo);
+    });
+  })(req, res, next);
+});
+
+// Trata páginas não encontradas
+app.use(function(req, res, next){
+  res.status(404);
+  res.format({
+    default: function () {
+      res.redirect('/naoachou')
+    }
+  })
+});
 
 // Inicia servidor
 const server = app.listen(3000, () => {
