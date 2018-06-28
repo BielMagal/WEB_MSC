@@ -39,11 +39,12 @@ exports.getLogin =  function (req, res) {
 /*
   POST /login
 */
-exports.postLogin = function (req, res, next) {
-  console.log('post login');
-  console.log(req.user);
+exports.postLogin = function (req, res) {
+
+  console.log(req);
+  // console.log(req.user);
   // if (req.isAuthenticated()) {
-      res.redirect('/mundo');
+      // res.redirect('/mundo');
   // } else {
     // res.redirect('/');
   // }
